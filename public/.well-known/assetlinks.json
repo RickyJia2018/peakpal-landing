@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.googuar.snowpro",
+    "sha256_cert_fingerprints": ["E8:A1:6C:7B:9E:E7:17:7B:6F:F1:F9:47:2B:64:A5:E5:DF:74:EB:6B:EF:D0:89:53:BF:C3:08:DA:A9:2B:A7:6A"]
+  }
+}]
