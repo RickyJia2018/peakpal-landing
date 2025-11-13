@@ -1542,7 +1542,8 @@ studentId: jspb.Message.getFieldWithDefault(msg, 1, 0),
 instructorId: jspb.Message.getFieldWithDefault(msg, 2, 0),
 price: jspb.Message.getFieldWithDefault(msg, 3, 0),
 videoUrl: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-languageId: jspb.Message.getFieldWithDefault(msg, 5, 0)
+languageId: jspb.Message.getFieldWithDefault(msg, 5, 0),
+message: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1598,6 +1599,10 @@ proto.pb.CreateLessonRequest.deserializeBinaryFromReader = function(msg, reader)
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setLanguageId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
+      msg.setMessage(value);
       break;
     default:
       reader.skipField();
@@ -1660,6 +1665,13 @@ proto.pb.CreateLessonRequest.serializeBinaryToWriter = function(message, writer)
   if (f !== 0) {
     writer.writeInt32(
       5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -1771,6 +1783,42 @@ proto.pb.CreateLessonRequest.prototype.getLanguageId = function() {
  */
 proto.pb.CreateLessonRequest.prototype.setLanguageId = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string message = 6;
+ * @return {string}
+ */
+proto.pb.CreateLessonRequest.prototype.getMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.pb.CreateLessonRequest} returns this
+ */
+proto.pb.CreateLessonRequest.prototype.setMessage = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.pb.CreateLessonRequest} returns this
+ */
+proto.pb.CreateLessonRequest.prototype.clearMessage = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.pb.CreateLessonRequest.prototype.hasMessage = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

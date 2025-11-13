@@ -178,6 +178,11 @@ export class CreateLessonRequest extends jspb.Message {
   getLanguageId(): number;
   setLanguageId(value: number): CreateLessonRequest;
 
+  getMessage(): string;
+  setMessage(value: string): CreateLessonRequest;
+  hasMessage(): boolean;
+  clearMessage(): CreateLessonRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateLessonRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateLessonRequest): CreateLessonRequest.AsObject;
@@ -193,11 +198,17 @@ export namespace CreateLessonRequest {
     price: number;
     videoUrl?: string;
     languageId: number;
+    message?: string;
   };
 
   export enum VideoUrlCase {
     _VIDEO_URL_NOT_SET = 0,
     VIDEO_URL = 4,
+  }
+
+  export enum MessageCase {
+    _MESSAGE_NOT_SET = 0,
+    MESSAGE = 6,
   }
 }
 

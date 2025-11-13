@@ -74,8 +74,8 @@ export class ConfirmUploadRequest extends jspb.Message {
   getCategory(): string;
   setCategory(value: string): ConfirmUploadRequest;
 
-  getBucketName(): string;
-  setBucketName(value: string): ConfirmUploadRequest;
+  getIsPrivateFile(): boolean;
+  setIsPrivateFile(value: boolean): ConfirmUploadRequest;
 
   getInUse(): boolean;
   setInUse(value: boolean): ConfirmUploadRequest;
@@ -102,7 +102,7 @@ export namespace ConfirmUploadRequest {
     fileSize: number;
     fileType: string;
     category: string;
-    bucketName: string;
+    isPrivateFile: boolean;
     inUse: boolean;
     expiredAt?: google_protobuf_timestamp_pb.Timestamp.AsObject;
     filePath: string;

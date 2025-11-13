@@ -23,6 +23,7 @@ import * as rpc_lesson_pb from './rpc_lesson_pb'; // proto import: "rpc_lesson.p
 import * as rpc_code_pb from './rpc_code_pb'; // proto import: "rpc_code.proto"
 import * as rpc_review_pb from './rpc_review_pb'; // proto import: "rpc_review.proto"
 import * as rpc_policy_pb from './rpc_policy_pb'; // proto import: "rpc_policy.proto"
+import * as rpc_delete_file_pb from './rpc_delete_file_pb'; // proto import: "rpc_delete_file.proto"
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb'; // proto import: "google/protobuf/empty.proto"
 
 

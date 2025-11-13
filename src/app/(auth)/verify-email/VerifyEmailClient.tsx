@@ -77,7 +77,7 @@ export default function VerifyEmailClient() {
         console.error("Verification error:", err);
         setVerificationStatus('failure');
         setMessage(translations[lang].verificationFailed);
-      } else if (response && response.getIsVerified()) {
+      } else if (response && response.getSuccess()) {
         setVerificationStatus('success');
         setMessage(translations[lang].verificationSuccess);
       } else {

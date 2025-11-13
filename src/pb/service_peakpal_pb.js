@@ -61,5 +61,7 @@ var rpc_review_pb = require('./rpc_review_pb.js');
 goog.object.extend(proto, rpc_review_pb);
 var rpc_policy_pb = require('./rpc_policy_pb.js');
 goog.object.extend(proto, rpc_policy_pb);
+var rpc_delete_file_pb = require('./rpc_delete_file_pb.js');
+goog.object.extend(proto, rpc_delete_file_pb);
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 goog.object.extend(proto, google_protobuf_empty_pb);

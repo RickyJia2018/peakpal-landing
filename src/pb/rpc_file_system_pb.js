@@ -718,7 +718,7 @@ fileName: jspb.Message.getFieldWithDefault(msg, 1, ""),
 fileSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
 fileType: jspb.Message.getFieldWithDefault(msg, 3, ""),
 category: jspb.Message.getFieldWithDefault(msg, 4, ""),
-bucketName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+isPrivateFile: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
 inUse: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
 expiredAt: (f = msg.getExpiredAt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 filePath: jspb.Message.getFieldWithDefault(msg, 8, "")
@@ -775,8 +775,8 @@ proto.pb.ConfirmUploadRequest.deserializeBinaryFromReader = function(msg, reader
       msg.setCategory(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readStringRequireUtf8());
-      msg.setBucketName(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsPrivateFile(value);
       break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -848,9 +848,9 @@ proto.pb.ConfirmUploadRequest.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getBucketName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getIsPrivateFile();
+  if (f) {
+    writer.writeBool(
       5,
       f
     );
@@ -953,20 +953,20 @@ proto.pb.ConfirmUploadRequest.prototype.setCategory = function(value) {
 
 
 /**
- * optional string bucket_name = 5;
- * @return {string}
+ * optional bool is_private_file = 5;
+ * @return {boolean}
  */
-proto.pb.ConfirmUploadRequest.prototype.getBucketName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.pb.ConfirmUploadRequest.prototype.getIsPrivateFile = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.pb.ConfirmUploadRequest} returns this
  */
-proto.pb.ConfirmUploadRequest.prototype.setBucketName = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.pb.ConfirmUploadRequest.prototype.setIsPrivateFile = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 5, value);
 };
 
 

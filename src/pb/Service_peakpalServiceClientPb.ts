@@ -32,6 +32,7 @@ import * as rpc_resort_pb from './rpc_resort_pb'; // proto import: "rpc_resort.p
 import * as rpc_review_pb from './rpc_review_pb'; // proto import: "rpc_review.proto"
 import * as rpc_token_product_pb from './rpc_token_product_pb'; // proto import: "rpc_token_product.proto"
 import * as rpc_user_pb from './rpc_user_pb'; // proto import: "rpc_user.proto"
+import * as rpc_delete_file_pb from './rpc_delete_file_pb'; // proto import: "rpc_delete_file.proto"
 import * as rpc_forget_password_pb from './rpc_forget_password_pb'; // proto import: "rpc_forget_password.proto"
 import * as rpc_chat_system_pb from './rpc_chat_system_pb'; // proto import: "rpc_chat_system.proto"
 import * as rpc_login_user_pb from './rpc_login_user_pb'; // proto import: "rpc_login_user.proto"
@@ -187,6 +188,49 @@ export class PeakPalClient {
     request,
     metadata || {},
     this.methodDescriptorGCSDeleteFile);
+  }
+
+  methodDescriptorDeleteFile = new grpcWeb.MethodDescriptor(
+    '/pb.PeakPal/DeleteFile',
+    grpcWeb.MethodType.UNARY,
+    rpc_delete_file_pb.DeleteFileRequest,
+    rpc_delete_file_pb.DeleteFileResponse,
+    (request: rpc_delete_file_pb.DeleteFileRequest) => {
+      return request.serializeBinary();
+    },
+    rpc_delete_file_pb.DeleteFileResponse.deserializeBinary
+  );
+
+  deleteFile(
+    request: rpc_delete_file_pb.DeleteFileRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<rpc_delete_file_pb.DeleteFileResponse>;
+
+  deleteFile(
+    request: rpc_delete_file_pb.DeleteFileRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: rpc_delete_file_pb.DeleteFileResponse) => void): grpcWeb.ClientReadableStream<rpc_delete_file_pb.DeleteFileResponse>;
+
+  deleteFile(
+    request: rpc_delete_file_pb.DeleteFileRequest,
+    metadata?: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: rpc_delete_file_pb.DeleteFileResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/pb.PeakPal/DeleteFile',
+        request,
+        metadata || {},
+        this.methodDescriptorDeleteFile,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/pb.PeakPal/DeleteFile',
+    request,
+    metadata || {},
+    this.methodDescriptorDeleteFile);
   }
 
   methodDescriptorConfirmUpload = new grpcWeb.MethodDescriptor(
